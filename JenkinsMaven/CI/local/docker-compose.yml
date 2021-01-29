@@ -1,0 +1,15 @@
+version: "3"
+services:
+  ansible:
+    build: .
+    image: ansible
+    container_name: ansible
+    volumes:
+      - ../ansible:/work/ansible
+      - ../jenkins/jenkins_jobs.ini:/etc/jenkins_jobs/jenkins_jobs.ini
+      - ../jenkins/jobs:/work/jobs
+    ports:
+      - 8080:8080
+    # command: ["ansible-playbook", "jenkins.yml"]
+    stdin_open: true # docker run -i
+    tty: true # docker run -t

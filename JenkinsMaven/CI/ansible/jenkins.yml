@@ -1,0 +1,13 @@
+- hosts: localhost
+  become: true
+  vars:
+    ansible_python_interpreter: "/usr/bin/python3"
+    jenkins_hostname: localhost
+
+  roles:
+    - role: geerlingguy.java
+      __java_packages:
+        - openjdk-11-jdk
+    - role: geerlingguy.jenkins
+      jenkins_admin_username: admin
+      jenkins_admin_password: admin
