@@ -1,0 +1,11 @@
+- job:
+    name: test-pipeline-job
+    project-type: pipeline
+    sandbox: true
+    pipeline-scm:
+      scm:
+        - hg:
+            url: https://github.com/MartinGrue/CICD_Playground
+            clean: true
+      # script-path: Jenkinsfile.groovy
+      # lightweight-checkout: true

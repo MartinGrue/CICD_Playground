@@ -11,5 +11,5 @@ RUN ansible-galaxy install geerlingguy.java
 WORKDIR /work
 ADD start.sh .
 RUN chmod +x start.sh
-CMD ["bash", "./start.sh"]
+# CMD ["bash", "./start.sh"]
 # CMD ["ansible-playbook", "playbooks/jenkins.yml"]

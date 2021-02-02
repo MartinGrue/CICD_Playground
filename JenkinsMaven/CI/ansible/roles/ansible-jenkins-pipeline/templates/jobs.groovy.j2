@@ -1,0 +1,21 @@
+{% for repository in jenkins_git_repositories %}
+pipelineJob('{{ repository }}') {
+  triggers {
+    scm ''
+  }
+  definition {
+    cpsScm {
+      scm {
+        git {
+          remote {
+            url('{{ jenkins_git_host }}/{{ jenkins_git_path }}/{{ repository }}.git')
+          }
+          branch('master')
+        }
+      }
+      scriptPath('Jenkinsfile')
+    }
+  }
+}
+
+{% endfor %}
