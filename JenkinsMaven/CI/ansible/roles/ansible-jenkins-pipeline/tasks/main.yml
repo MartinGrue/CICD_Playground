@@ -142,6 +142,10 @@
     status_code: [200, 302]
   when: item not in jenkins_installed_plugins.json.plugins|map(attribute='shortName')|list
   with_items: "{{ jenkins_plugins }}"
+  register: Install_plugins
+  until: Install_plugins.status != 400
+  retries: 60
+  delay: 10
 
 - name: Wait for plugins to be installed
   uri:
