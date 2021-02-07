@@ -9,7 +9,7 @@ services:
       - ../jenkins/jenkins_jobs.ini:/etc/jenkins_jobs/jenkins_jobs.ini
       - ../jenkins/jobs:/work/jobs
     ports:
-      - 8080:8080
-    # command: ["ansible-playbook", "jenkins.yml"]
+      - 7070:8080
+    # command: ["ansible-playbook", "ansible/jenkins2.yml"]
     stdin_open: true # docker run -i
     tty: true # docker run -t

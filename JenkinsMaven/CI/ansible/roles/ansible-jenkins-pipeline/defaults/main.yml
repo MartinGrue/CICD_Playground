@@ -7,6 +7,7 @@ jenkins_plugins:
 - job-dsl
 - workflow-aggregator
 - workflow-cps
+- github
 jenkins_seed_name: pipeline-seed
 jenkins_seed_template: seed-config.xml.j2
 jenkins_job_template: jobs.groovy.j2
