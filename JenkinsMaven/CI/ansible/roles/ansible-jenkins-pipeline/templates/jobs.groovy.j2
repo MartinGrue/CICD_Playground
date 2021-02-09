@@ -1,8 +1,26 @@
 {% for repository in jenkins_git_repositories %}
 pipelineJob('{{ repository }}') {
-  triggers {
-    scm ''
+
+   properties {
+    pipelineTriggers {
+      triggers {
+        genericTrigger {
+          genericVariables {
+           
+          }
+             printContributedVariables(true)
+   printPostContent(true)
+   silentResponse(false)
+   regexpFilterText("")
+   regexpFilterExpression("")
+        }
+      }
+    }
   }
+  
+
+
+
   definition {
     cpsScm {
       scm {
