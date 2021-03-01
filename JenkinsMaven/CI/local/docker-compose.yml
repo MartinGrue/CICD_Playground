@@ -1,13 +1,13 @@
-version: "3"
+version: "2"
 services:
   ansible:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: ansible
     container_name: ansible
     volumes:
       - ../ansible:/work/ansible
-      - ../jenkins/jenkins_jobs.ini:/etc/jenkins_jobs/jenkins_jobs.ini
-      - ../jenkins/jobs:/work/jobs
     ports:
       - 7070:8080
     # command: ["ansible-playbook", "ansible/jenkins2.yml"]

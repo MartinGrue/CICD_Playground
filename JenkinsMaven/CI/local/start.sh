@@ -1,3 +1,3 @@
 #!/bin/bash
-ansible-playbook ansible/jenkins.yml
-jenkins-jobs update jobs
+ansible-playbook /work/ansible/jenkins.yml
+/bin/bash

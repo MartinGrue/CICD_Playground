@@ -120,7 +120,7 @@
     jenkins_crumb_token: "{{ jenkins_crumb.json.crumbRequestField }}={{ jenkins_crumb.json.crumb }}"
 
 - name: Log Jenkins crumb
-  ansible.builtin.debug:
+  debug:
     msg: Got crumb {{ jenkins_crumb_token }}
 
 - name: Get installed plugins
