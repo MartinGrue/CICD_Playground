@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: all
   become: true
   vars:
     ansible_python_interpreter: "/usr/bin/python3"
@@ -9,7 +9,7 @@
   roles:
     - role: geerlingguy.java
       __java_packages:
-        - openjdk-11-jdk
+        - openjdk-8-jdk
     - name: ansible-jenkins-pipeline
       jenkins_admin_password: admin
       jenkins_git_user: MartinGrue
